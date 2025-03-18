@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alekya Bank</title>
+    <link rel="stylesheet" href="htmlcssform.css">
+</head>
+<body>
+    
+    <div id="scrollingMessage">
+        <marquee behavior="scroll" direction="left">Open from 10 AM to 4 PM</marquee>
+    </div>
+
+    
+    <div id="start" style="display:block;">
+        <div class="bg1">
+            <h1 class="titlename">Alekya Bank</h1>
+            <img src="https://tse4.mm.bing.net/th?id=OIP.y4tj_RgaojHRULOMMxQsKQHaHa&pid=Api&P=0&h=180" style="height: 180px; width:150px;">
+            <button class="but" onclick="showPage('pageCreate')">Sign Up</button>
+            <button class="but" onclick="showPage('loginPage')">Login</button>
+        </div>
+    </div>
+
+    <!-- Sign-Up Page -->
+    <div id="pageCreate" style="display: none;">
+        <div class="bg2">
+            <h1 class="heading1">Bank Account Opening Form</h1>
+            <form id="accountForm" onsubmit="submitForm(event)">
+               
+                <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                
+                <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
+                    <label for="full-name" style="font-weight: bold;">Full Name</label>
+                </div>
+                <div style="display: flex; gap: 15px; margin-bottom: 10px;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                        <select id="prefix" name="prefix" required>
+                            <option value="Mr">Mr.</option>
+                            <option value="Mrs">Mrs.</option>
+                            <option value="Ms">Ms.</option>
+                            <option value="Dr">Dr.</option>
+                        </select>
+                        <label for="prefix">Prefix</label>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                        <input type="text" size="15" id="fn" name="fn" required>
+                        <label for="fn">First Name</label>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                        <input type="text" size="15" id="mn" name="mn">
+                        <label for="mn">Middle Name</label>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                        <input type="text" size="15" id="ln" name="ln" required>
+                        <label for="ln">Last Name</label>
+                    </div>
+                </div>
+
+            
+                <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+                    <label for="email">Email:</label>
+                    <input type="email" size="50" id="email" name="email" required> <br>
+                    
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" size="30" id="phone" name="phone" required>
+                </div>
+
+                
+                <div style="display: flex; justify-content: flex-start; margin-bottom: 10px; margin-top: 20px;">
+                    <label for="Address" style="font-weight: bold;">Address</label>
+                </div>
+                <div style="display: flex; gap: 15px; margin-bottom: 10px;">
+                    <label for="city">City:</label>
+                    <input type="text" size="20" id="city" name="city" required>
+
+                    <label for="state">State:</label>
+                    <input type="text" size="10" id="state" name="state" required>
+
+                    <label for="zip">Zip Code:</label>
+                    <input type="text" size="10" id="zip" name="zip" required>
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px; padding-bottom: 5px;">
+                    <label for="country">Country:</label>
+                    <select id="country" name="country" required>
+                        <option value="usa">United States</option>
+                        <option value="canada">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="australia">Australia</option>
+                        <option value="India">India</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+               
+                <div style="display: flex; justify-content: flex-start; margin-bottom: 10px; margin-top: 20px;">
+                    <label for="Education" style="font-weight: bold;">Education Level</label>
+                </div>
+                <div style="display: flex; gap: 15px; margin-bottom: 10px; padding-bottom: 10px;">
+                    <label><input type="radio" name="education" value="high_school" required> High School</label>
+                    <label><input type="radio" name="education" value="Graduate"> Undergraduate</label>
+                    <label><input type="radio" name="education" value="masters"> Masters Degree</label>
+                    <label><input type="radio" name="education" value="phd"> PhD</label>
+                    <label><input type="radio" name="education" value="NA"> NA</label>
+                </div>
+
+                
+                <div style="display: flex; justify-content: flex-start; margin-bottom: 10px; margin-top: 20px;">
+                    <label for="Identity" style="font-weight: bold;">Form of Identification</label>
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+                    <label><input type="checkbox" name="identification" value="national_id"> National Identity Card</label>
+                    <label><input type="checkbox" name="identification" value="drivers_license"> Driver's License</label>
+                    <label><input type="checkbox" name="identification" value="passport"> International Passport</label>
+                    <label><input type="checkbox" name="identification" value="student_id"> Student ID</label>
+                </div>
+
+                
+                <div style="display: flex; justify-content: flex-start; margin-bottom: 10px; margin-top: 20px;">
+                    <label for="idUpload">Upload Identification Document:</label>
+                    <input type="file" id="idUpload" name="idUpload" accept=".jpg, .jpeg, .png, .pdf" required>
+                </div>
+
+                
+                <div style="display: flex; justify-content: flex-start; margin-bottom: 10px; margin-top: 20px;">
+                    <label for="Account" style="font-weight: bold;">Account Information</label>
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+                    <label for="accountType">Account Type:</label>
+                    <select id="accountType" name="accountType" required>
+                        <option value="priority_banking">Priority Banking</option>
+                        <option value="preferred">Preferred</option>
+                        <option value="private">Private</option>
+                        <option value="time_deposit">Time Deposit</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <label for="accountCategory">Account Category:</label>
+                    <select id="accountCategory" name="accountCategory" required>
+                        <option value="individual">Individual</option>
+                        <option value="joint">Joint</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+                    <label for="initialDeposit">Initial Deposit Amount:</label>
+                    <input type="number" id="initialDeposit" name="initialDeposit" min="0" required>
+                </div>
+
+               
+                <div style="display: flex; justify-content: flex-start; margin-bottom: 10px; margin-top: 20px;">
+                    <label for="security" style="font-weight: bold;">Security Question</label>
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+                    <label for="securityQuestion">Choose a security question:</label>
+                    <select id="securityQuestion" name="securityQuestion" required>
+                        <option value="pet_name">What is the name of your first pet?</option>
+                        <option value="mother_maiden">What is your mother's maiden name?</option>
+                        <option value="first_school">What is the name of your first school?</option>
+                        <option value="first_car">What was the make of your first car?</option>
+                    </select>
+                    <label for="securityAnswer">Answer:</label>
+                    <input type="text" id="securityAnswer" name="securityAnswer" required>
+                </div>
+
+                
+                <div style="margin-top: 20px;">
+                    <label><input type="checkbox" name="terms" required> I agree to the terms and conditions</label>
+                </div>
+
+                
+                <input type="submit" value="Submit">
+                <input type="reset" value="Clear"/>
+                <button type="button" onclick="showPage('start')">Back</button>
+            </form>
+
+            
+            <div id="successMessage" style="display: none; color: green; margin-top: 20px;">
+                Submitted successfully!
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Page -->
+    <div id="loginPage" style="display: none;">
+        <div class="bg2">
+            <h1 class="heading1">Login</h1>
+            <form id="loginForm" onsubmit="loginForm(event)">
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                    <input type="text" size="15" id="loginUsername" name="loginUsername" required>
+                    <label for="loginUsername">Username</label>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                    <input type="password" size="15" id="loginPassword" name="loginPassword" required>
+                    <label for="loginPassword">Password</label>
+                </div>
+                <input type="submit" value="Login">
+                <button type="button" onclick="showPage('start')">Back</button>
+            </form>
+            <div id="loginMessage" style="display: none; color: red; margin-top: 20px;">
+                Invalid username or password!
+            </div>
+        </div>
+    </div>
+
+   
+    <div id="dashboard" style="display: none;">
+        <div class="bg2">
+            <h1 class="heading1">Welcome to Alekya Bank</h1>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                <button class="but" onclick="showPage('editDetails')">Edit Details</button>
+                <button class="but" onclick="showPage('checkBalance')">Check Balance</button>
+                <button class="but" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="editDetails" style="display: none;">
+        <div class="bg2">
+            <h1 class="heading1">Edit Details</h1>
+            <form id="editForm" onsubmit="saveChanges(event)">
+               
+                <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
+                    <label for="editFullName" style="font-weight: bold;">Full Name</label>
+                </div>
+                <div style="display: flex; gap: 15px; margin-bottom: 10px;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                        <select id="editPrefix" name="editPrefix">
+                            <option value="Mr">Mr.</option>
+                            <option value="Mrs">Mrs.</option>
+                            <option value="Ms">Ms.</option>
+                            <option value="Dr">Dr.</option>
+                        </select>
+                        <label for="editPrefix">Prefix</label>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                        <input type="text" size="15" id="editFirstName" name="editFirstName" required>
+                        <label for="editFirstName">First Name</label>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                        <input type="text" size="15" id="editMiddleName" name="editMiddleName">
+                        <label for="editMiddleName">Middle Name</label>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                        <input type="text" size="15" id="editLastName" name="editLastName" required>
+                        <label for="editLastName">Last Name</label>
+                    </div>
+                </div>
+    
+                
+                <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+                    <label for="editEmail">Email:</label>
+                    <input type="email" size="50" id="editEmail" name="editEmail" required>
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+                    <label for="editPhone">Phone Number:</label>
+                    <input type="tel" size="30" id="editPhone" name="editPhone" required>
+                </div>
+    
+               
+                <div style="display: flex; justify-content: flex-start; margin-bottom: 10px; margin-top: 20px;">
+                    <label for="editAddress" style="font-weight: bold;">Address</label>
+                </div>
+                <div style="display: flex; gap: 15px; margin-bottom: 10px;">
+                    <label for="editCity">City:</label>
+                    <input type="text" size="20" id="editCity" name="editCity" required>
+                    <label for="editState">State:</label>
+                    <input type="text" size="10" id="editState" name="editState" required>
+                    <label for="editZip">Zip Code:</label>
+                    <input type="text" size="10" id="editZip" name="editZip" required>
+                </div>
+    
+               
+                <input type="submit" value="Save Changes">
+                <button type="button" onclick="showPage('dashboard')">Back</button>
+            </form>
+        </div>
+    </div>
+
+   
+    <div id="checkBalance" style="display: none;">
+        <div class="bg2">
+            <h1 class="heading1">Check Balance</h1>
+            <p>Your current balance is: <span id="balanceAmount">$1000</span></p>
+            <button type="button" onclick="showPage('dashboard')">Back</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // show/hide pages
+        function showPage(pageId) {
+            document.getElementById('start').style.display = 'none';
+            document.getElementById('pageCreate').style.display = 'none';
+            document.getElementById('loginPage').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'none';
+            document.getElementById('editDetails').style.display = 'none';
+            document.getElementById('checkBalance').style.display = 'none';
+            document.getElementById(pageId).style.display = 'block';
+    
+            if (pageId === 'editDetails') {
+                loadEditForm();
+            } else if (pageId === 'checkBalance') {
+                displayBalance();
+            }
+        }
+    
+       
+        function submitForm(event) {
+            event.preventDefault();
+    
+            
+            const formData = {
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value,
+                prefix: document.getElementById('prefix').value,
+                firstName: document.getElementById('fn').value,
+                middleName: document.getElementById('mn').value,
+                lastName: document.getElementById('ln').value,
+                email: document.getElementById('email').value,
+                dob: document.getElementById('dob').value,
+                phone: document.getElementById('phone').value,
+                city: document.getElementById('city').value,
+                state: document.getElementById('state').value,
+                zip: document.getElementById('zip').value,
+                country: document.getElementById('country').value,
+                education: document.querySelector('input[name="education"]:checked').value,
+                identification: Array.from(document.querySelectorAll('input[name="identification"]:checked')).map(el => el.value),
+                idUpload: document.getElementById('idUpload').value,
+                accountType: document.getElementById('accountType').value,
+                accountCategory: document.getElementById('accountCategory').value,
+                initialDeposit: document.getElementById('initialDeposit').value,
+                securityQuestion: document.getElementById('securityQuestion').value,
+                securityAnswer: document.getElementById('securityAnswer').value,
+            };
+    
+            // Save to local storage
+            localStorage.setItem('user_' + formData.username, JSON.stringify(formData));
+    
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('accountForm').reset();
+        }
+    
+       
+        function loginForm(event) {
+            event.preventDefault();
+    
+            
+            const enteredUsername = document.getElementById('loginUsername').value;
+            const enteredPassword = document.getElementById('loginPassword').value;
+    
+            const savedCredentials = JSON.parse(localStorage.getItem('user_' + enteredUsername));
+    
+           
+            if (savedCredentials && enteredUsername === savedCredentials.username && enteredPassword === savedCredentials.password) {
+                localStorage.setItem('loggedInUser', enteredUsername);
+                showPage('dashboard');
+            } else {
+                document.getElementById('loginMessage').style.display = 'block';
+            }
+        }
+    
+        
+        function logout() {
+            localStorage.removeItem('loggedInUser');
+            showPage('start');
+        }
+    
+        function saveChanges(event) {
+            event.preventDefault();
+    
+            const loggedInUser = localStorage.getItem('loggedInUser');
+    
+            // Get updated form data
+            const updatedData = {
+                prefix: document.getElementById('editPrefix').value,
+                firstName: document.getElementById('editFirstName').value,
+                middleName: document.getElementById('editMiddleName').value,
+                lastName: document.getElementById('editLastName').value,
+                email: document.getElementById('editEmail').value,
+                phone: document.getElementById('editPhone').value,
+                city: document.getElementById('editCity').value,
+                state: document.getElementById('editState').value,
+                zip: document.getElementById('editZip').value,
+            };
+    
+            // Save updated data to local storage
+            localStorage.setItem('updatedUserDetails_' + loggedInUser, JSON.stringify(updatedData));
+    
+            alert('Changes saved successfully!');
+            showPage('dashboard');
+        }
+    
+        
+        function loadEditForm() {
+            const loggedInUser = localStorage.getItem('loggedInUser');
+            let savedData = JSON.parse(localStorage.getItem('updatedUserDetails_' + loggedInUser));
+    
+            if (!savedData) {
+                savedData = JSON.parse(localStorage.getItem('user_' + loggedInUser));
+            }
+    
+            if (savedData) {
+                if (savedData.prefix) {
+                    document.getElementById('editPrefix').value = savedData.prefix;
+                }
+                if (savedData.firstName) {
+                    document.getElementById('editFirstName').value = savedData.firstName;
+                }
+                if (savedData.middleName) {
+                    document.getElementById('editMiddleName').value = savedData.middleName;
+                }
+                if (savedData.lastName) {
+                    document.getElementById('editLastName').value = savedData.lastName;
+                }
+                if (savedData.email) {
+                    document.getElementById('editEmail').value = savedData.email;
+                }
+                if (savedData.phone) {
+                    document.getElementById('editPhone').value = savedData.phone;
+                }
+                if (savedData.city) {
+                    document.getElementById('editCity').value = savedData.city;
+                }
+                if (savedData.state) {
+                    document.getElementById('editState').value = savedData.state;
+                }
+                if (savedData.zip) {
+                    document.getElementById('editZip').value = savedData.zip;
+                }
+            }
+        }
+    
+        function displayBalance() {
+            const loggedInUser = localStorage.getItem('loggedInUser');
+            const savedCredentials = JSON.parse(localStorage.getItem('user_' + loggedInUser));
+            if (savedCredentials && savedCredentials.initialDeposit) {
+                document.getElementById('balanceAmount').textContent = "$" + savedCredentials.initialDeposit;
+            } else {
+                document.getElementById('balanceAmount').textContent = "$0";
+            }
+        }
+    </script>
+</body>
+</html>
